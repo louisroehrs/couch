@@ -1,0 +1,27 @@
+
+const initialState = {
+  outlets: [
+    { id: 0, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: true},
+    { id: 1, text: 'Chair', callForOn: false, requested: false, outletOn: false, exclusive: true},
+    { id: 2, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: true},
+    { id: 3, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: false},
+    { id: 4, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: false},
+    { id: 5, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: false},
+    { id: 6, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: false},
+    { id: 7, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: false},
+    { id: 8, text: 'Couch', callForOn: false, requested: false, outletOn: false, exclusive: false}
+  ],
+  device: { poweredOn: false,
+          }
+}
+
+export default function appReducer( state = initialState, action) {
+  switch (action.type) {
+
+  default:
+    return state
+  }
+}
+
+
+    
