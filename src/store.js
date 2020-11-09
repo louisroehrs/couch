@@ -1,11 +1,11 @@
 import { configureStore } from  '@reduxjs/toolkit'
 
-import chairsReducer  from './features/chairs/chairsSlice'
+import outletsReducer  from './features/outlets/outletsSlice'
 
 
 export default configureStore ( {
   reducer: {
-    chairs: chairsReducer
+    outlets: outletsReducer
   }
 })
 

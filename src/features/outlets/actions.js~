@@ -1,0 +1,24 @@
+
+export const FETCH_OUTLETS_PENDING = 'FETCH_OUTLETS_PENDING';
+export const FETCH_OUTLETS_SUCCESS = 'FETCH_OUTLETS_SUCCESS';
+export const FETCH_OUTLETS_ERROR = 'FETCH_OUTLETS_ERROR';
+
+function fetchOutletsPending() {
+    return {
+        type: FETCH_OUTLETS_PENDING
+    }
+}
+
+function fetchOutletsSuccess(outlets) {
+    return {
+        type: FETCH_OUTLETS_SUCCESS
+        outlets: outlets
+    }
+}
+
+function fetchOutletsError(error) {
+    return {
+        type: FETCH_OUTLETS_ERROR
+        error: error
+    }
+}

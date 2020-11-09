@@ -1,43 +1,39 @@
-import {useSelector} from 'react-redux'
+import {  useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
 import Button from './Button.jsx';
-
+import fetchOutlets from './features/outlets/outletService.js';
 
 const  App = () =>  {
 
-  const outlets = useSelector( (state) => state.chairs.outlets);
+  const outlets = useSelector( (state) => state.outlets.outlets);
+
+  const dispatch = useDispatch();
+
+
+  useEffect(()=>{
+    dispatch(fetchOutlets())    
+    const interval=setInterval(()=>{
+      dispatch(fetchOutlets())    
+     },5000)
+     return()=>clearInterval(interval)
+  },[]);
+
+
+
   return ( 
 	  <div className="App">
 	    <header className="App-header">
 	       { outlets.map ( outlet => (
-          <Button
-            id={outlet.id}
-            label={outlet.label}
-            callForOn = {outlet.callForOn}
-            outletOn = {outlet.outletOn}
+           <Button
+             key = {outlet.id} 
+             id={outlet.id}
+             label={outlet.label}
+             callForOn = {outlet.callForOn}
+             outletOn = {outlet.outletOn}
           />
         ))}
-        
-        {/*
-       
-        <Button
-          label={"Chair"}
-          on={"yes"}
-          powered={"yes"}
-        />
-        <Button
-          label={"Chair"}
-          on={"yes"}
-          powered={"yes"}
-        />
-        <Button
-          label={"Couch"}
-          on={"yes"}
-          powered={"yes"}
-        />
-         */}
-        
 	    </header>
 	  </div>
     );
