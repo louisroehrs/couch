@@ -44,7 +44,6 @@ const outletsSlice  = createSlice ({
     },
 
     requestedChairsFetched: (state,action) => {
-      debugger;
       state.outlets[0].callForOn = action.payload["chairRequest1"];
       state.outlets[1].callForOn = action.payload["chairRequest2"];
       state.outlets[2].callForOn = action.payload["chairRequest3"];
