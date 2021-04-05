@@ -2,6 +2,12 @@
 
 .*~
 
+# emacs
+**/#*.*#
+
+# INTELLIJ
+.idea
+
 # dependencies
 /node_modules
 /.pnp

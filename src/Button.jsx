@@ -9,9 +9,9 @@ const  Button =({
   onClick
 }) => {
   return (
-    <div class="button">
+    <div class="button"  onClick={onClick}>
       <div class="label">{label}</div>
-      <div class={callForOn ? 'switchOn': 'switchOff'} onClick={onClick}>{callForOn}</div>
+      <div class={callForOn ? 'switchOn': 'switchOff'}>{callForOn}</div>
       <div class={outletOn ? 'poweredOn': 'poweredOff'} >{outletOn?"On": "Off"}</div>
     </div>
   );
